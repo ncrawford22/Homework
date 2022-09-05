@@ -1,0 +1,126 @@
+img {
+    position: relative;
+    width: 500px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    font-weight: bold;
+    text-shadow: 3px 3px gold;
+}
+
+button{
+    width: 75px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 2px 2px  black;
+}
+
+button:hover {
+    background-color: lemonchiffon;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    visibility: hidden;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px red, 0 0 1em black, 0 0 0.2em blue;
+
+}
+
+.light {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    animation-name: fadeIn;
+    animation-duration: 10s;
+    animation-iteration-count: inherit;
+    animation-direction: normal;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;};
+    25% {opacity: 0.25;};
+    50% {opacity: 0.5;};
+    75% {opacity: 0.75;};
+    100% {opacity: 1;};
+}
+
+#switchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    outline: 8px solid black;
+    width: 125px;
+    height: 150px;
+    z-index: 5;
+    background-color: bisque;
+    box-shadow: 0 12px 50px 0 black;
+    position: absolute;
+    top: 500px;
+    right: 300px;
+}
+
+.bball img{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    animation-name: basketball;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    visibility: hidden;
+    z-index: 6;
+}
+
+@keyframes basketball {
+
+    25% {
+        right:77.5%;
+        top:20.5%
+       }
+    37.5% {
+        right:62%;
+        top:82%;
+       }
+    50% {
+        right:46.5%;
+        top:35.87%
+       }
+    62.5% {
+        right:31%;
+        top:82%;
+       }
+    75% {
+        right:15.5%;
+        top:47.4%;
+       }
+    85% {
+        right:0.5%;
+        top:82%;
+       }
+};
