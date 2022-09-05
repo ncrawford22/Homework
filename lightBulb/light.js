@@ -23,7 +23,6 @@ lightSwitch.addEventListener('click', function(event) {
             document.body.style.backgroundColor = "gray";
             lightSwitch.innerText = 'OFF';
             lightSwitch.style.backgroundColor = "";
-            bulb.style.visibility = "hidden";
             bball.style.visibility = "visible";
             header.style.visibility = "hidden";
             quote.style.visibility = "visible";
