@@ -14,7 +14,7 @@ app.engine('bugs', (filePath, options, callback) => {
       
       const rendered = content.toString()
         .replace('#title#', '<title>' + options.title + '</title>')
-        .replace('#message#', '<h1>' + options.message + '</h1>').replace('#content#','<p>'+ options.content + '</>' ).replace('#content1#','<p>'+ options.content1 + '</>' )
+        .replace('#message#', '<h1>' + options.message + '</h1>').replace('#content#','<p>'+ options.content + '</>' ).replace('#content1#','<p>'+ options.content1 + '</>' ).replace('#content2#','<p>'+ options.content2 + '</>' ).replace('#content3#','<p>'+ options.content3 + '</>' )
       return callback(null, rendered)
     })
   })
@@ -39,7 +39,7 @@ app.get("/:numberOfBugs", (req, res) => {
     let nextRandomPage = randomPage - 1;
    
     if (numberOfBugs == 99) {
-        res.render('template', {title: numberOfBugs + ' Bugs!', message: numberOfBugs + ' Little bugs in the code!', content: numberOfBugs + ' Little bugs..', content1: randomPage + ' bugs in the code! ' + `<a href="/${nextPage}">Fix more bugs?</a>`})
+        res.render('template', {title: numberOfBugs + ' Bugs!', message: numberOfBugs + ' Little bugs in the code!', content: numberOfBugs + ' Little bugs..', content1: 'Take one down..', content2: 'Patch it around..', content3: randomPage + ' bugs in the code! ' + `<a href="/${nextPage}">Fix more bugs?</a>`})
 
     //    res.send(`${numberOfBugs} Little bugs in the code!'
     //              ${numberOfBugs} Little bugs!
@@ -48,17 +48,17 @@ app.get("/:numberOfBugs", (req, res) => {
     //              ${randomPage} bugs in the code! <a href="/${nextPage}">Fix more bugs?</a>`)
     } else if (numberOfBugs == 1){
 
-        res.render('template', {title: numberOfBugs + ' Bug!', message: numberOfBugs + ' Little bug in the code!', content: numberOfBugs + ' Little bug..', content1: randomPage + ' bugs in the code! ' + `<a href="/${nextRandomPage}">Fix more bugs?</a>`})
+        res.render('template', {title: numberOfBugs + ' Bug!', message: numberOfBugs + ' Little bug in the code!', content: numberOfBugs + ' Little bug..', content1: 'Take one down..', content2: 'Patch it around..', content3: randomPage + ' bugs in the code! ' + `<a href="/${nextRandomPage}">Fix more bugs?</a>`})
 
         // res.send(`${numberOfBugs} Little bugs in the code! 
         //           ${numberOfBugs} Little bugs!
         //           Take one down..
         //           Patch it around..
         //           ${randomPage} bugs in the code! <a href="/${nextRandomPage}">Fix more bugs?</a>`)
-    } else if (numberOfBugs >= 0 || numberOfBugs != 1 || numberOfBugs < 99 || numberOfBugs > 99 || numberOfBugs != 99) {
+    } else if (numberOfBugs > 0 && numberOfBugs != 1 && numberOfBugs != 99) {
         nextRandomPage = randomPage;
-        res.render('template', {title: numberOfBugs + ' Bugs!', message: numberOfBugs + ' Little bugs in the code!', content: numberOfBugs + ' Little bugs..', content1: randomPage + ' bugs in the code! ' + `<a href="/${nextRandomPage}">Fix more bugs?</a>`})
-    } else {
+        res.render('template', {title: numberOfBugs + ' Bugs!', message: numberOfBugs + ' Little bugs in the code!', content: numberOfBugs + ' Little bugs..', content1: 'Take one down..', content2: 'Patch it around..', content3: randomPage + ' bugs in the code! ' + `<a href="/${randomPage}">Fix more bugs?</a>`})
+    } else if (req.params.numberOfBugs <= 0) {
         res.send(`We need to find more bugs to FIX ASAP!! '<a href="/99">Start Over</a>'`)
 
     }
