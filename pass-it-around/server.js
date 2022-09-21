@@ -39,7 +39,7 @@ app.get("/:numberOfBugs", (req, res) => {
     let nextRandomPage = randomPage - 1;
    
     if (numberOfBugs == 99) {
-        res.render('template', {title: numberOfBugs + ' Bugs!', message: numberOfBugs + ' Little bugs in the code!', content: numberOfBugs + ' Little bugs..', content1: 'Take one down..', content2: 'Patch it around..', content3: randomPage + ' bugs in the code! ' + `<a href="/${nextPage}">Fix more bugs?</a>`})
+        res.render('template', {title: numberOfBugs + ' Bugs!', message: numberOfBugs + ' Little bugs in the code!', content: numberOfBugs + ' Little bugs..', content1: 'Take one down..', content2: 'Patch it around..', content3: nextPage + ' bugs in the code! ' + `<a href="/${nextPage}">Fix more bugs?</a>`})
 
     //    res.send(`${numberOfBugs} Little bugs in the code!'
     //              ${numberOfBugs} Little bugs!
