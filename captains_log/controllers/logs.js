@@ -34,7 +34,7 @@ const deleteOneLog = (req, res) => {
 
 // ROUTE    Put /logs/:id    (update)
 const updateOneLog = (req, res) => {
-    if (req.body.shipIsBroken === 'on' || true) {
+    if (req.body.shipIsBroken === 'on') {
         req.body.shipIsBroken = true
     } else {
         req.body.shipIsBroken = false
