@@ -1,0 +1,13 @@
+body {
+    background-image: url(../images/boat-monster.gif);
+    background-size: cover;
+    
+}
+
+h1 {
+    color: #5C4033;
+}
+
+li {
+    font-weight: bold;
+}
