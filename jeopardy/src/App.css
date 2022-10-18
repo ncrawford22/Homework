@@ -1,0 +1,47 @@
+.App {
+  display: grid;
+  position: relative;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  left: 30%;
+  top: 50px;
+  width: 45%;
+  height: 600px;
+  text-align: center;
+  background-color: #185074de;
+}
+
+.decrease {
+  background-color: lightpink;
+  margin: 4px;
+}
+
+.increase {
+  background-color: #3498d5;
+  margin: 4px;
+}
+
+.reset {
+  background-color: red;
+  margin: 4px;
+}
+
+.playBtn, .infoLabel, .score, .answer{
+  color: #ffea8f;
+}
+
+.questionBtn {
+  background-color: #ffea8f;
+}
+
+span, .welcome {
+  color: whitesmoke
+}
+
+.reveal {
+  background-color: darkblue;
+  color: white;
+  width: 250px;
+  height: 50px;
+  font-size: larger;
+}

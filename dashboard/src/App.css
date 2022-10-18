@@ -1,0 +1,59 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2rem;
+  height: 80vh;
+  width: 80vw;
+  grid-template-areas:
+    "display-sidebar display-reviews display-avgRating display-SA"
+    "display-sidebar display-visitors display-visitors display-visitors"
+}
+
+#display-sidebar {
+  grid-area: display-sidebar;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+#display-reviews {
+  grid-area: display-reviews;
+  padding: 0 10px;
+  background-color: lightgrey;
+}
+
+#display-avgRating {
+  grid-area: display-avgRating;
+  padding: 0 10px;
+  background-color: lightgrey;
+}
+
+#display-SA {
+  grid-area: display-SA;
+  padding: 0 10px;
+  background-color: lightgrey;
+}
+
+.saScores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#display-visitors {
+  grid-area: display-visitors;
+  padding: 0 10px;
+  background-color: lightgrey;
+}
+
+.blank-square{
+  position: absolute;
+  top: 57%;
+  left: 23%;
+  height: 20vh;
+  width: 110vh;
+  background-color: grey;
+}
