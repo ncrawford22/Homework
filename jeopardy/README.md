@@ -1,3 +1,7 @@
+# Jeopardy API
+Jeopardy Trivia App using jService!
+jService is an API that has Jeopardy trivia questions and answered available to the public.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
