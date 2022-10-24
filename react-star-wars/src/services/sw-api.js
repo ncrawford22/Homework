@@ -25,13 +25,16 @@ export default function SwAPI() {
     }, []);
 
     return (
-        <div className="shipRow">
 
-            {isPending && <div>Loading Starships...</div>}
+        <div className="container">
+            <div className="starshipApi">
 
-            {starships && starships.map((s, i) => {
-                return (<StarshipCard key={i} starship={s} />)
-            })}
+                {isPending && <div style={{fontWeight: "bolder", fontSize: "50px"}}>Loading Starships...</div>}
+                {starships && starships.map((starship, i) => {
+                    return (<StarshipCard key={i} starship={starship} />)
+                })}
+            </div>
+
         </div>
     );
 }
