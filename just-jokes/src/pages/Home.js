@@ -1,5 +1,9 @@
+import RandomDadJokes from "./RandomDadJokes";
+
 export default function Home() {
     return (
-        <div>Home</div>
+        <div>
+            <RandomDadJokes />
+        </div>
     )
 }
