@@ -1,7 +1,12 @@
+import NavBar from "../components/NavBar";
+
 export default function YoMamaJokes() {
 
     
     return (
-        <div>Yo Mama Jokes</div>
+        <div>
+            <NavBar />
+            Yo Mama Jokes
+        </div>
     )
 }

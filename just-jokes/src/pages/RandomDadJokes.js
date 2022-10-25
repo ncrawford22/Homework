@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
 
 export default function RandomDadJokes() {
 
@@ -27,7 +28,7 @@ export default function RandomDadJokes() {
                 }
             }
             getRandomDadJoke();
-        }, 5000)
+        }, 2500)
     }, [])
 
     return (
@@ -35,6 +36,7 @@ export default function RandomDadJokes() {
             {isLoading && <h1>Loading Random Dad Joke...</h1>}
             {!isLoading && rDadJoke && 
                 <div>
+                    <NavBar />
                     <h1>Random Dad Joke</h1>
                     <p>{rDadJoke}</p>
                 </div>}

@@ -1,9 +1,10 @@
-import RandomDadJokes from "./RandomDadJokes";
+import NavBar from "../components/NavBar";
 
 export default function Home() {
     return (
         <div>
-            <RandomDadJokes />
+            <NavBar />
+            <h1>We Have Jokes For Days!</h1>
         </div>
     )
 }
