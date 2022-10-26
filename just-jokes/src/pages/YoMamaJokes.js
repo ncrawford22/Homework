@@ -6,7 +6,7 @@ export default function YoMamaJokes() {
 
     const options = {
         headers: {
-            'X-RapidAPI-Key': 'cb2042e6c1mshfc61f45600cef7fp1b7156jsn531fca9c0d8f',
+            'X-RapidAPI-Key': process.env.REACT_APP_API_TOKEN,
 		    'X-RapidAPI-Host': 'humor-jokes-and-memes.p.rapidapi.com'
         }
     };

@@ -1,13 +1,29 @@
 import { useState } from "react";
 
-export default function SearchForDadJoke({ getRandomDadJoke }) {
+export default function SearchForDadJoke() {
 
-    let [jokeTerm, setJokeTerm] = useState('');
-    let [searchedTerm, setSearchedTerm] = useState("");
+    const [jokeTerm, setJokeTerm] = useState('');
+    const [isLoading, setIsLoading] = useState(true)
 
-    
+    const searchApi = `https://icanhazdadjoke.com/search?term=${jokeTerm}`;
 
-    const searchApi = "https://icanhazdadjoke.com/search?term=hipster";
+    const options = {
+        headers: {
+            'Accept': "application/json",
+        }
+    };
+
+    const searchRandomJoke = async (jokeTerm) => {
+        try{
+            const response = await fetch(searchApi, options)
+            const data = await response.json();
+                setJokeTerm(data.joke)
+                setIsLoading(false)
+                console.log(data.joke)
+            } catch(err) {
+            console.log(err)
+        }
+    }
 
     const handleChange = (evt) => {
         setJokeTerm(evt.target.value)
@@ -15,7 +31,7 @@ export default function SearchForDadJoke({ getRandomDadJoke }) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        getRandomDadJoke(jokeTerm)
+        searchRandomJoke(jokeTerm)
     }
 
     return (
