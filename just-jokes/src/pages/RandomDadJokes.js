@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import GetDadJoke from "../components/GetDadJoke";
 import NavBar from "../components/NavBar";
 
 export default function RandomDadJokes() {
@@ -14,31 +15,24 @@ export default function RandomDadJokes() {
     const [rDadJoke, setRDadJoke] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(() => {
-        setTimeout(() => {
-            const getRandomDadJoke = async () => {
-                try{
-                    const response = await fetch(api, options)
-                    const data = await response.json();
-                    setRDadJoke(data.joke)
-                    setIsLoading(false)
-                    console.log(data.joke)
-                } catch(err) {
-                    console.log(err)
-                }
-            }
-            getRandomDadJoke();
-        }, 2500)
-    }, [])
+    const getRandomDadJoke = async () => {
+        try{
+            const response = await fetch(api, options)
+            const data = await response.json();
+                setRDadJoke(data.joke)
+                setIsLoading(false)
+                console.log(data.joke)
+            } catch(err) {
+            console.log(err)
+        }
+    }
 
     return (
         <>
-            {isLoading && <h1>Loading Random Dad Joke...</h1>}
-            {!isLoading && rDadJoke && 
+            {rDadJoke && 
                 <div>
                     <NavBar />
-                    <h1>Random Dad Joke</h1>
-                    <p>{rDadJoke}</p>
+                    <GetDadJoke getRandomDadJoke={getRandomDadJoke} rDadJoke={rDadJoke} isLoading={isLoading} setIsLoading={setIsLoading}/>
                 </div>}
         </>
     )
