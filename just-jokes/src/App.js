@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import RandomDadJokes from './pages/RandomDadJokes';
 import getRandomDadJoke from './pages/RandomDadJokes'
 import YoMamaJokes from './pages/YoMamaJokes';
-import SearchForDadJ from './components/SearchForDadJ';
+import SearchForJokes from './components/SearchForJokes';
 
 function App() {
 
@@ -28,9 +28,9 @@ function App() {
           }
         />
         <Route
-          path="/searchdadjokes"
+          path="/searchjokes"
           element={
-            <SearchForDadJ 
+            <SearchForJokes 
             />
           }
         />

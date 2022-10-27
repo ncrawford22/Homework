@@ -1,7 +1,8 @@
 import { useState } from "react";
 import JokeSearchResults from "./JokeSearchResults";
+import NavBar from "./NavBar";
 
-export default function SearchForDadJ() {
+export default function SearchForJokes() {
 
     let [searchTerm, setSearchTerm] = useState("");
     let [joke, setJoke] = useState([])
@@ -35,6 +36,7 @@ export default function SearchForDadJ() {
 
     return (
         <div>
+            <NavBar />
             <form onSubmit={handleSubmit}>
                 <label htmlFor="search">Search</label>
                 <br />

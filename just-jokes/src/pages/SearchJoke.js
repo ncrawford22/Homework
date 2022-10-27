@@ -1,5 +1,5 @@
 import NavBar from "../components/NavBar";
-import SearchForDadJ from "../components/SearchForDadJ";
+import SearchForJokes from "../components/SearchForJokes";
 
 export default function SearchJoke() {
 
@@ -8,7 +8,7 @@ export default function SearchJoke() {
     return (
         <div>
             <NavBar />
-            <SearchForDadJ />
+            <SearchForJokes />
         </div>
     )
 }
