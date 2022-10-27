@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import RandomDadJokes from './pages/RandomDadJokes';
 import getRandomDadJoke from './pages/RandomDadJokes'
-import SearchJoke from './pages/SearchJoke';
 import YoMamaJokes from './pages/YoMamaJokes';
+import SearchForDadJ from './components/SearchForDadJ';
 
 function App() {
 
@@ -30,7 +30,8 @@ function App() {
         <Route
           path="/searchdadjokes"
           element={
-            <SearchJoke />
+            <SearchForDadJ 
+            />
           }
         />
         <Route

@@ -1,11 +1,14 @@
 import NavBar from "../components/NavBar";
-import SearchForDadJoke from "../components/SearchForDadJ";
+import SearchForDadJ from "../components/SearchForDadJ";
 
 export default function SearchJoke() {
+
+    // const searchApi = `https://icanhazdadjoke.com/search?term=${searchTerm}`;
+
     return (
         <div>
             <NavBar />
-            <SearchForDadJoke />
+            <SearchForDadJ />
         </div>
     )
 }

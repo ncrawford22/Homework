@@ -1,11 +1,10 @@
 import { useState } from "react";
+import JokeSearchResults from "./JokeSearchResults";
 
-export default function SearchForDadJoke() {
+export default function SearchForDadJ() {
 
-    const [jokeTerm, setJokeTerm] = useState('');
-    const [isLoading, setIsLoading] = useState(true)
-
-    const searchApi = `https://icanhazdadjoke.com/search?term=${jokeTerm}`;
+    let [searchTerm, setSearchTerm] = useState("");
+    let [joke, setJoke] = useState([])
 
     const options = {
         headers: {
@@ -13,25 +12,25 @@ export default function SearchForDadJoke() {
         }
     };
 
-    const searchRandomJoke = async (jokeTerm) => {
+    const searchForJoke = async (searchTerm) => {
         try{
-            const response = await fetch(searchApi, options)
+            const response = await fetch(`https://icanhazdadjoke.com/search?term=${searchTerm}`, options)
             const data = await response.json();
-                setJokeTerm(data.joke)
-                setIsLoading(false)
-                console.log(data.joke)
+            setJoke(data.results)
             } catch(err) {
             console.log(err)
         }
     }
 
-    const handleChange = (evt) => {
-        setJokeTerm(evt.target.value)
+
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value)
     }
 
-    const handleSubmit = (evt) => {
-        evt.preventDefault()
-        searchRandomJoke(jokeTerm)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        searchForJoke(searchTerm)
+        console.log(searchTerm)
     }
 
     return (
@@ -42,11 +41,13 @@ export default function SearchForDadJoke() {
                 <input 
                     id="search"
                     type="text"
-                    value={jokeTerm}
+                    value={searchTerm}
                     onChange={handleChange}
                 />
                 <input type="submit" value="submit" />
             </form>
+
+            <JokeSearchResults joke={joke}/>
         </div>
     )
 }
