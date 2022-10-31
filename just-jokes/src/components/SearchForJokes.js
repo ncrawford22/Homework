@@ -38,7 +38,7 @@ export default function SearchForJokes() {
         <div>
             <NavBar />
             <form onSubmit={handleSubmit}>
-                <label htmlFor="search">Search</label>
+                <label htmlFor="search">Search for Jokes:</label>
                 <br />
                 <input 
                     id="search"
