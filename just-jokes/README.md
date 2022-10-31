@@ -19,6 +19,8 @@ Create a .env file in the root folder of the project and add the following line:
 
 npm start to launch server
 
+** _redirects file may be necessary to render page if using React Router **
+
 
 # Routes
 - Available Routes:
