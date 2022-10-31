@@ -4,8 +4,8 @@ Just Jokes is a simple joke generating app built using React to fetch and manipu
 
 The APIs that were used for this project were:
 
-https://rapidapi.com/anton12341/api/yo-mama-jokes
-https://icanhazdadjoke.com/
+- https://rapidapi.com/anton12341/api/yo-mama-jokes
+- https://icanhazdadjoke.com/
 
 # Technologies Used
 
