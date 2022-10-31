@@ -10,7 +10,7 @@ The APIs that were used for this project were:
 
 # Technologies Used
 
-JavaScript, React Js, CSS, and Bootstrap
+JavaScript, React, CSS, and Bootstrap
 
 # Run Locally
 
